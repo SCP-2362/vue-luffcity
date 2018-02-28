@@ -4,7 +4,7 @@
     <div class="header">
       <router-link to="/index">首页</router-link>
       <router-link to="/course">课程</router-link>
-      <router-link to="/degree">X学位</router-link>
+      <router-link to="/degrees">X学位</router-link>
       <router-link to="/news">深科技</router-link>
       <div v-if="this.$store.state.username">
         <a href="">{{this.$store.state.username}}</a> | <a href="">注销</a>
