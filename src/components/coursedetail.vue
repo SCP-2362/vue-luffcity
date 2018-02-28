@@ -13,7 +13,7 @@
 
       <li @click="tab('detail')">课程概述</li>
       <li @click="tab('chapters')">课程章节</li>
-      <li @click="tab('questions')">常见问题</li>
+      <li @click="tab('question')">常见问题</li>
     </ul>
     <!--<div class="box">-->
     <div class="detail box">
@@ -109,7 +109,7 @@ export default {
     this.initCoursesDetail();
     this.coursedetail();
     this.coursechapters();
-	this.coursequestion();
+	  this.coursequestion();
   },
   methods:{
     initCoursesDetail(){
@@ -168,16 +168,6 @@ export default {
             that.box.chapters = response
           })
       },
-    coursequestion(){
-       var that = this
-       this.$axios.request({
-              url:'http://127.0.0.1:8000/api/courses/'+ this.pk+'.json'+'?data_type=question',
-                  method:'GET',
-                  responseType:'json'
-                }).then(function (response) {
-                  console.log(response)
-                })
-        },
     tabChange(){
       $(".box").each(function () {
 //        this.css("display", 'none')
@@ -193,14 +183,14 @@ export default {
 	  coursequestion(){
        var that = this;
        this.$axios.request({
-              url:'http://127.0.0.1:8000/api/course/'+ this.pk+'.json'+'?data_type=question',
-                  method:'GET',
-                  responseType:'json'
-                }).then(function (response) {
-                  console.log(response.data);
-                  that.box.question_list = response.data.data;
-                  console.log(that.question_list)
-                })
+          url:'http://127.0.0.1:8000/api/courses/'+ this.pk+'.json'+'?data_type=question',
+              method:'GET',
+              responseType:'json'
+            }).then(function (response) {
+              console.log("问题", response);
+              that.box.question_list = response.data.data;
+              console.log(that.question_list)
+            })
         }
     }
 }
