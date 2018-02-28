@@ -4,9 +4,10 @@ import Index from '../components/index.vue'
 import Course from '../components/course.vue'
 import CourseDetail from '../components/coursedetail.vue'
 import Degree from '../components/degree.vue'
-import degreeDetail from '../components/degreedetail.vue'
 import News from '../components/news.vue'
 import Login from '../components/login.vue'
+import DegreeDetail from '../components/degreedetail.vue'
+import DetailNews from '../components/DetailNews.vue'
 
 
 
@@ -30,9 +31,19 @@ export default new Router({
       component: Course
     },
     {
-      path: '/degrees',
+      path: '/course-detail/:id/',
+      name: 'CourseDetail',
+      component: CourseDetail
+    },
+    {
+      path: '/degree',
       name: 'Degree',
       component: Degree
+    },
+    {
+      path: '/degree-detail/:id/',
+      name: 'DegreeDetail',
+      component: DegreeDetail
     },
     {
       path: '/news',
@@ -45,14 +56,9 @@ export default new Router({
       component: Login
     },
     {
-      path:'/degrees/:id/',
-      name: 'degreeDetail',
-      component: degreeDetail
+      path: '/news_detail/:id',
+      name: 'DetailNews',
+      component: DetailNews
     },
-    {
-      path:'/course-detail/:id/',
-      name: 'CourseDetail',
-      component: CourseDetail
-    }
   ]
 })

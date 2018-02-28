@@ -3,7 +3,6 @@
     <h2>学位课详细</h2>
     <div class="head">
       <h2>{{head.title}}</h2>
-      <h3>{{head.brief}}</h3>
       <div>
         开课日期：
         限定席位：
@@ -11,7 +10,7 @@
     </div>
     <div class="box">
       <h3>基本信息</h3>
-      <p>{{}}</p>
+      <p>{{box.brief}}</p>
     </div>
   </div>
 </template>
@@ -24,10 +23,9 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       head: {
         title: '',
-        brief: '',
       },
       box: {
-        basic: '',
+        brief: '',
 
       }
     }
@@ -44,15 +42,11 @@ export default {
         methods:'GET',
         responseType:'json'
       }).then(function (response) {
-        console.log(response);
-        response = response.data.data;
-
+        response = response.data.data
         console.log("头部", response);
 
         that.head.title = response.name;
-        that.head.brief = response.brief;
-
-        that.box.basic = response
+        that.box.brief = response.brief
       })
     }
   }

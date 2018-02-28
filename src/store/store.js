@@ -17,7 +17,6 @@ export default new Vuex.Store({
       state.token = data.token
       Cookie.set('username', data.username, '20min')
       Cookie.set('token', data.token, '20min')
-
     },
     clearToken: function (state) {
       state.username = null
