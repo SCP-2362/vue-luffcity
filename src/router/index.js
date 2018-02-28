@@ -7,6 +7,7 @@ import News from '../components/news.vue'
 import Login from '../components/login.vue'
 import CourseDetail from '../components/coursedetail.vue'
 import DegreeDetail from '../components/degreedetail.vue'
+import DetailNews from '../components/DetailNews.vue'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/news_detail/:id',
+      name: 'DetailNews',
+      component: DetailNews
     },
   ]
 })
