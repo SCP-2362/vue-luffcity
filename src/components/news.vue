@@ -54,4 +54,7 @@ h1, h2 {
 a {
   color: #42b983;
 }
+  span .s1{
+    color: red;
+  }
 </style>
