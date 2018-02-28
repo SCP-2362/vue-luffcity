@@ -24,7 +24,7 @@ export default {
       err_msg:''
     }
   },
-  mounted(){
+  mounted: function (){
     this.init()
   },
   methods:{
