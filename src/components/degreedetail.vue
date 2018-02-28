@@ -3,7 +3,6 @@
     <h2>学位课详细</h2>
     <div class="head">
       <h2>{{head.title}}</h2>
-      <!--<h3>{{head.brief}}</h3>-->
       <div>
         开课日期：
         限定席位：
@@ -44,11 +43,9 @@ export default {
         responseType:'json'
       }).then(function (response) {
         response = response.data.data
-
         console.log("头部", response);
 
         that.head.title = response.name;
-
         that.box.brief = response.brief
       })
     }

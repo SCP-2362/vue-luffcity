@@ -70,7 +70,11 @@
 
     </div>
     <div class="question box">
-
+       <h1>常见问题</h1>
+        <ul v-for="item in box.question_list">
+          <li>问：{{ item.question }}</li>
+          <li>答：{{ item.answer }}</li>
+        </ul>
     </div>
     <!--</div>-->
 
@@ -95,16 +99,17 @@ export default {
           brief: '',
           why_study: '',
         },
-        chapters: []
+        chapters: [],
+		question_list: []
       },
-
     }
   },
   mounted:function () {
     //当组件一加载就执行的函数
     this.initCoursesDetail();
     this.coursedetail();
-    this.coursechapters()
+    this.coursechapters();
+	this.coursequestion();
   },
   methods:{
     initCoursesDetail(){
@@ -184,7 +189,19 @@ export default {
         $(ele).css("display", "none")
       })
       $("."+cls).css("display", "block")
-    }
+    },
+	  coursequestion(){
+       var that = this;
+       this.$axios.request({
+              url:'http://127.0.0.1:8000/api/course/'+ this.pk+'.json'+'?data_type=question',
+                  method:'GET',
+                  responseType:'json'
+                }).then(function (response) {
+                  console.log(response.data);
+                  that.box.question_list = response.data.data;
+                  console.log(that.question_list)
+                })
+        }
     }
 }
 </script>

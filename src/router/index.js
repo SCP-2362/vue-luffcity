@@ -2,12 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../components/index.vue'
 import Course from '../components/course.vue'
+import CourseDetail from '../components/coursedetail.vue'
 import Degree from '../components/degree.vue'
 import News from '../components/news.vue'
 import Login from '../components/login.vue'
-import CourseDetail from '../components/coursedetail.vue'
 import DegreeDetail from '../components/degreedetail.vue'
 import DetailNews from '../components/DetailNews.vue'
+
+
 
 Vue.use(Router)
 
