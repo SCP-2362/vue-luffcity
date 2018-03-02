@@ -38,7 +38,7 @@ export default {
       let nid = this.pk = this.$route.params.id;  //获取id
       let that = this;
       this.$axios.request({
-        url: 'http://127.0.0.1:8000/api/degrees/' + nid + '.json',
+        url: 'http://127.0.0.1:8000/api/v1/degrees/' + nid + '.json',
         methods:'GET',
         responseType:'json'
       }).then(function (response) {

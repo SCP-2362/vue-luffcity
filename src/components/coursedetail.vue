@@ -116,7 +116,7 @@ export default {
       let nid = this.pk = this.$route.params.id;  //获取id
       let that = this;
       this.$axios.request({
-        url: 'http://127.0.0.1:8000/api/courses/' + nid + '.json',
+        url: 'http://127.0.0.1:8000/api/v1/courses/' + nid + '.json',
         methods:'GET',
         responseType:'json'
       }).then(function (response) {
@@ -133,7 +133,7 @@ export default {
     coursedetail(){
       let that = this;
       this.$axios.request({
-        url:'http://127.0.0.1:8000/api/courses/'+ this.pk+'.json'+'?data_type=detail',
+        url:'http://127.0.0.1:8000/api/v1/courses/'+ this.pk+'.json'+'?data_type=detail',
         method:'GET',
         responseType:'json'
       }).then(function (response) {
@@ -158,7 +158,7 @@ export default {
     coursechapters(){
         var that = this
         this.$axios.request({
-        url:'http://127.0.0.1:8000/api/courses/'+ this.pk+'.json'+'?data_type=chapters',
+        url:'http://127.0.0.1:8000/api/v1/courses/'+ this.pk+'.json'+'?data_type=chapters',
             method:'GET',
             responseType:'json'
           }).then(function (response) {
@@ -183,7 +183,7 @@ export default {
 	  coursequestion(){
        var that = this;
        this.$axios.request({
-          url:'http://127.0.0.1:8000/api/courses/'+ this.pk+'.json'+'?data_type=question',
+          url:'http://127.0.0.1:8000/api/v1/courses/'+ this.pk+'.json'+'?data_type=question',
               method:'GET',
               responseType:'json'
             }).then(function (response) {
