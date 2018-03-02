@@ -27,7 +27,7 @@
           init(){
             let nid=this.$route.params.id;
             let that = this;
-            let url = 'http://127.0.0.1:8000/api/news/'+nid+'/';
+            let url = 'http://127.0.0.1:8000/api/v1/news/'+nid+'/';
             this.$axios({
               url:url,
               method:'GET',
@@ -48,7 +48,7 @@
            if (user_name){
               let nid=this.$route.params.id;
               let that = this;
-              let url = 'http://127.0.0.1:8000/api/news/'+nid+'/';
+              let url = 'http://127.0.0.1:8000/api/v1/news/'+nid+'/';
               this.$axios({
                url:url,
                method:'POST',
@@ -75,7 +75,7 @@
            if (user_name){
               let nid=this.$route.params.id;
               let that = this;
-              let url = 'http://127.0.0.1:8000/api/shoucang/'+nid+'/';
+              let url = 'http://127.0.0.1:8000/api/v1/shoucang/'+nid+'/';
               this.$axios({
                url:url,
                method:'POST',
